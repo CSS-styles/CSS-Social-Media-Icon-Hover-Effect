@@ -1,0 +1,94 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+	background-color: #262626FF;
+}
+div{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	height: 100px;
+	width: 100px;
+	font-size: 50px;
+	border-radius: 10px;
+	box-shadow: 1px 1px 60px black;
+	background-color: rgba(255, 255, 255, 0.1);
+	cursor: pointer;
+	overflow: hidden;
+}
+div::before{
+	content: '';
+	display: block;
+	position: absolute;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	bottom: 70%;
+	left: 70%;
+	z-index: -1;
+}
+div::after{
+	content: '';
+	display: block;
+	position: absolute;
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	top: 70%;
+	right: 70%;
+	z-index: -1;
+}
+.facebook::before{
+	background-color: dodgerblue;
+	box-shadow: 1px 1px 60px dodgerblue;
+}
+.facebook::after{
+	background-color: royalblue;
+	box-shadow: 1px 1px 60px royalblue;
+}
+.whatsapp::before{
+	background-color: lime;
+	box-shadow: 1px 1px 60px lime;
+}
+.whatsapp::after{
+	background-color: limegreen;
+	box-shadow: 1px 1px 60px limegreen;
+}
+.youtube::before{
+	background-color: red;
+	box-shadow: 1px 1px 60px red;
+}
+.youtube::after{
+	background-color: #F70237FA;
+	box-shadow: 1px 1px 60px #F70237FA;
+}
+div:hover::before{
+	animation: slide1 0.5s linear forwards;
+}
+div:hover::after{
+	animation: slide2 0.5s linear forwards;
+}
+@keyframes slide1{
+	100%{
+		bottom: 0;
+		left: 0;
+		border-radius: 0;
+	}
+}
+@keyframes slide2{
+	100%{
+		top: 0;
+		right: 0;
+		border-radius: 0;
+	}
+}
+
